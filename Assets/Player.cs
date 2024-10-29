@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     public float speed = 20f;
     private float horizontalInput;
     private float forwardInput;
+    public bool isOnGround = true;
     public float jumpForce = 4.0f;
     public Rigidbody body;
     
@@ -22,10 +23,12 @@ public class Player : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         forwardInput = Input.GetAxis("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround) 
         {
             body.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isOnGround = false;
         }
+
     }
 
     private void FixedUpdate()
@@ -36,5 +39,12 @@ public class Player : MonoBehaviour
         body.AddForce(Vector3.forward * speed * forwardInput);
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isOnGround = true;
+        }
+    }
 
 }
