@@ -9,7 +9,11 @@ public class Player : MonoBehaviour
     public bool isOnGround = true;
     public float jumpForce = 4.0f;
     public Rigidbody body;
-    
+    [SerializeField] private Transform CamRotator;
+
+    public Vector2 turn;
+    public float sensitivity = 5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,24 +23,27 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // float input = Input.GetAxis("Horizontal");
         horizontalInput = Input.GetAxis("Horizontal");
         forwardInput = Input.GetAxis("Vertical");
+        if (horizontalInput > 0 || horizontalInput < 0 || forwardInput > 0 || forwardInput < 0)
+        {
+            //body.velocity = new Vector3(horizontalInput * CamRotator.right.x * speed, body.velocity.y, forwardInput * CamRotator.forward.z * speed);
+            Vector3 v = new Vector3 (horizontalInput * CamRotator.right.x * speed, body.velocity.y, forwardInput * CamRotator.forward.z * speed);
+            body.velocity = v;
+        }
 
-        if (Input.GetKeyDown(KeyCode.Space) && isOnGround) 
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround) // Jump
         {
             body.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
         }
 
-    }
+        if (Input.GetAxis("Mouse X") == 1)
+        {
+            turn.y += Input.GetAxis("Mouse X") + sensitivity;
+            transform.localRotation = Quaternion.Euler(0, turn.y, 0);
+        }
 
-    private void FixedUpdate()
-    {
-        //transform.Translate(horizontalInput * speed * Time.deltaTime * Vector3.right);
-        //transform.Translate(forwardInput * speed * Time.deltaTime * Vector3.forward);
-        body.AddForce(Vector3.right * speed * horizontalInput);
-        body.AddForce(Vector3.forward * speed * forwardInput);
     }
 
     private void OnCollisionEnter(Collision collision)

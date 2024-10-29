@@ -2,17 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class RotatorControls : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public Vector2 turn;
-    public float sensitivity = 0.5f;
+    [SerializeField] Transform rotatePivot;
+    [SerializeField] private float yaw;
+    [SerializeField] private float pitch;
+    [SerializeField] private float speedH;
+    [SerializeField] private float speedV;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
     void Update()
     {
-        turn.y += Input.GetAxis("Mouse Y") + sensitivity;
-        turn.x += Input.GetAxis("Mouse X") + sensitivity;
-        transform.localRotation = Quaternion.Euler(-turn.x, turn.y, 0);
+        yaw += speedH * Input.GetAxis("Mouse X");
+        pitch -= speedV * Input.GetAxis("Mouse Y");
+        pitch = Mathf.Clamp(pitch, -50, 60);
+
+        rotatePivot.eulerAngles = new Vector3(pitch, yaw, 0.0f);
     }
 }
