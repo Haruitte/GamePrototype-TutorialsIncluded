@@ -1,6 +1,6 @@
 # Learning Journal
 ## Week One Goals
-### Main aim for week one (15/10/24):
+### Main aim for week one (8/10/24):
 Drafts for potential tutorials = 
   - Brainstorm what would be needed in final year game project.
   - Identify main concepts of each idea.
@@ -9,7 +9,7 @@ Drafts for potential tutorials =
 Learning Journal made
 
 ## Week Two Goal
-### Coverage of Week two designs (22/10/24):
+### Coverage of Week two designs (15/10/24):
 
 First task: folowing draft tutorial by Paul to develop understanding of Tutorial making.
 Main takeaway's:
@@ -45,7 +45,9 @@ First Idea for coding: Install System/Meter
   - will most likley be a system used in the final game plan as part of in game combat and idle states
 
 ## Week Three Goals
-### Looking at tutorials and starting first (29/10/24)
+### Looking at tutorials and starting first (22/10/24)
 
+First task changed:
+First tutorial wil be movement instead of meters/install.
 
 
