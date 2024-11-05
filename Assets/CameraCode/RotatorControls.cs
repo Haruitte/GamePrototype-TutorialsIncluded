@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RotatorControls : MonoBehaviour
 {
+    // Start is called before the first frame update
     [SerializeField] Transform rotatePivot;
     [SerializeField] private float yaw;
     [SerializeField] private float pitch;
