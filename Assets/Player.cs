@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
         {
             //body.velocity = new Vector3(horizontalInput * CamRotator.right.x * speed, body.velocity.y, forwardInput * CamRotator.forward.z * speed);
             //Vector3 v = new Vector3 (horizontalInput * transform.right.x * speed, body.velocity.y, forwardInput * transform.forward.z * speed);
-            body.velocity = direction * speed;
+            body.velocity = new Vector3 (direction.x * speed, body.velocity.y, direction.z * speed);
             Quaternion newDirection = Quaternion.LookRotation(direction);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, newDirection, rotateSpeed * Time.deltaTime); //interpolation
         }
