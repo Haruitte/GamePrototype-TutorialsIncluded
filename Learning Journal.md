@@ -49,5 +49,7 @@ First Idea for coding: Install System/Meter
 
 First task changed:
 First tutorial wil be movement instead of meters/install.
+  - Movement will be core part of Final project
+  - Healthbar will cover basics of meter tutorial
 
 
