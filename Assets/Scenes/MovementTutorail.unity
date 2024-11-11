@@ -246,6 +246,7 @@ MonoBehaviour:
   rotateSpeed: 897.6
   isOnGround: 1
   jumpForce: 6
+  sensitivity: 1
   body: {fileID: 123642415}
   CamRotator: {fileID: 280523090}
 --- !u!54 &123642415
@@ -594,7 +595,6 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
-  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -693,20 +693,6 @@ MonoBehaviour:
   pitch: 0
   speedH: 10
   speedV: 10
---- !u!114 &963194230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 229211d21092929449eb1c229e93a198, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CamRotator: {fileID: 280523090}
-  sensitivity: 5
 --- !u!1 &1205044002
 GameObject:
   m_ObjectHideFlags: 0

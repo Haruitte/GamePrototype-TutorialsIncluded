@@ -17,10 +17,21 @@ public class RotatorControls : MonoBehaviour
     }
     void Update()
     {
+        DetectMouse();
+        ApplyCameraRotation();
+    }
+
+    private void DetectMouse()
+    {
         yaw += speedH * Input.GetAxis("Mouse X");
         pitch -= speedV * Input.GetAxis("Mouse Y");
         pitch = Mathf.Clamp(pitch, -50, 60);
 
+    }
+
+    private void ApplyCameraRotation()
+    {
         rotatePivot.eulerAngles = new Vector3(pitch, yaw, 0.0f);
     }
+
 }
