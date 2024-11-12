@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 123642411}
   - component: {fileID: 123642410}
   - component: {fileID: 123642415}
+  - component: {fileID: 123642416}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -184,7 +185,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: aa2c3ef2510f02a49af4cef41ad5f594, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -276,6 +277,29 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &123642416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123642409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32030c69c6e4bb14aa8252466f8d92d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  install: 0
+  maxInstall: 100
+  installValue: 0
+  installSlider: {fileID: 1766765317}
+  easeInstallSlider: {fileID: 0}
+  idleColour: {r: 1, g: 1, b: 1, a: 1}
+  attackColour: {r: 1, g: 0, b: 0, a: 1}
+  installColour: {r: 0, g: 1, b: 0.9374714, a: 1}
+  installAttackColour: {r: 1, g: 0.43237165, b: 0, a: 1}
+  playerMaterial: {fileID: 2100000, guid: aa2c3ef2510f02a49af4cef41ad5f594, type: 2}
+  playerRenderer: {fileID: 123642411}
 --- !u!1 &280523089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1092,7 +1116,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1766765315}
   - component: {fileID: 1766765317}
-  - component: {fileID: 1766765316}
   m_Layer: 5
   m_Name: Install
   m_TagString: Untagged
@@ -1121,23 +1144,6 @@ RectTransform:
   m_AnchoredPosition: {x: 237.7, y: -62.7}
   m_SizeDelta: {x: 32.9446, y: 35.903}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1766765316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1766765314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32030c69c6e4bb14aa8252466f8d92d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  install: 0
-  maxInstall: 100
-  installValue: 0
-  installSlider: {fileID: 1766765317}
-  easeInstallSlider: {fileID: 0}
 --- !u!114 &1766765317
 MonoBehaviour:
   m_ObjectHideFlags: 0
