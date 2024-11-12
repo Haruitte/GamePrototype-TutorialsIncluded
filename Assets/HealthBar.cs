@@ -20,23 +20,42 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(healthSlider.value != health)
+        HealthValue();
+    }
+
+    private void HealthValue()
+    {
+        CheckingHealthValue();
+        ChangingHealthValue();
+        ChangingInGameHealth();
+    }
+
+
+    private void CheckingHealthValue()
+    {
+        if (healthSlider.value != health)
         {
             healthSlider.value = health;
         }
+    }
 
-        if(Input.GetKeyDown(KeyCode.Mouse0))
+    private void ChangingHealthValue()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            takeDamage(10);
-        }   
+            TakeDamage(10);
+        }
+    }
 
-        if(healthSlider.value != easeHealthSlider.value)
+    private void ChangingInGameHealth()
+    {
+        if (healthSlider.value != easeHealthSlider.value)
         {
             easeHealthSlider.value = Mathf.Lerp(easeHealthSlider.value, health, lerpSpeed);
         }
     }
 
-    void takeDamage(float damage)
+    void TakeDamage(float damage)
     {
         health -= damage;
     }
