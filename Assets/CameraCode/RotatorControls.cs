@@ -24,7 +24,7 @@ public class RotatorControls : MonoBehaviour
     private void DetectMouse()
     {
         yaw += speedH * Input.GetAxis("Mouse X");
-        pitch -= speedV * Input.GetAxis("Mouse Y");
+        pitch -= speedV * Input.GetAxis("Mouse Y"); 
         pitch = Mathf.Clamp(pitch, - 50, 60);
 
     }
