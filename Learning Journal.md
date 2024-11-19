@@ -52,4 +52,13 @@ First tutorial wil be movement instead of meters/install.
   - Movement will be core part of Final project
   - Healthbar will cover basics of meter tutorial
 
+Testing movement and main things needed to be addressed.
+  - Basic 8 way movement
+  - Jumping
+  - Ground Checks
+  - Direction
+
+I was able to develop the code for today for basic movement based of Paul's code and combining it with a tutorial I watched online to get basic movement using transform functions to get rudimentary 3D movement in along the x-axis. The main issues  at this moment was when jump was spammed, their was no way to detect if the player object was grounded.
+
+
 
