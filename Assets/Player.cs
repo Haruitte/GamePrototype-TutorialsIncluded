@@ -7,9 +7,8 @@ public class Player : MonoBehaviour
     private float horizontalInput;
     private float forwardInput;
     public float rotateSpeed = 360f; // degrees per second
-    public bool isOnGround = true;
+    public int isOnGround = 0;
     public float jumpForce = 4.0f;
-    [SerializeField] private float sensitivity = 1;
     public Rigidbody body;
     Vector3 direction;
     Vector3 cameraForward;
@@ -20,6 +19,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody>();
+        isOnGround = 0;
     }
 
     // Update is called once per frame
@@ -36,22 +36,19 @@ public class Player : MonoBehaviour
 
     private void DetectMovement()
     {
-        horizontalInput = ReturnInput(Input.GetAxis("Horizontal"));
-        forwardInput = ReturnInput(Input.GetAxis("Vertical"));
+        horizontalInput = Input.GetAxis("Horizontal");
+        forwardInput = Input.GetAxis("Vertical");
         cameraForward = CamRotator.forward; //Overwrites the angle offset of the camera
         cameraForward.y = 0;
+        ApplyJump();
     }
 
-    private float ReturnInput(float axisInput)
-    {
-        axisInput = axisInput * sensitivity;
-        return axisInput;
-    }
+
 
     private void ApplyMovement()
     {
+      
         ApplyWalking();
-        ApplyJump();
     }
 
     private void ApplyWalking()
@@ -69,19 +66,26 @@ public class Player : MonoBehaviour
 
     private void ApplyJump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isOnGround) // Jump
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround > 0) // Jump //isOnGround set as int to account for multiple items as ground, when in air value will go to zero
         {
             body.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
-        isOnGround = false;
+        
     }
 
 
-    private void OnCollisionStay(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isOnGround = true;
+            isOnGround += 1;
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isOnGround -= 1;
         }
     }
 

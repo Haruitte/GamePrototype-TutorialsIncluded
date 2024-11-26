@@ -30,33 +30,9 @@ public class InstallMechanic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (installSlider.value != installValue)
-        {
-            installSlider.value = Mathf.Lerp(installSlider.value, installValue, lerpSpeed);
-        }
-
-        if (!install && installValue == maxInstall)
-        {
-            install = true;
-            playerRenderer.material.SetColor("_Color", installColour);
-        }
-
-        if (install && installValue == 0)
-        {
-            install = false;
-            playerRenderer.material.SetColor("_Color", idleColour);
-        }
-
-        if (!Input.GetMouseButton(0) && !install)
-        {
-            playerRenderer.material.SetColor("_Color", idleColour);
-        }
-
-        if (!Input.GetMouseButton(0) && install)
-        {
-            playerRenderer.material.SetColor("_Color", installColour);
-        }
-
+        SliderCheck();
+        ColourSwitch();
+  
         if (install)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -74,6 +50,58 @@ public class InstallMechanic : MonoBehaviour
             }
         }
     }
+
+    private void SliderCheck()
+    {
+        if (installSlider.value != installValue)
+        {
+            installSlider.value = Mathf.Lerp(installSlider.value, installValue, lerpSpeed);
+        }
+    }
+
+    private void ColourSwitch()
+    {
+        IdleCheck();
+        InstallCheck();
+        IdleInputs();
+        InstallInputs();
+    }
+
+    private void IdleCheck()
+    {
+        if (install && installValue == 0)
+        {
+            install = false;
+            playerRenderer.material.SetColor("_Color", idleColour);
+        }
+    }
+
+    private void InstallCheck()
+    {
+        if (!install && installValue == maxInstall)
+        {
+            install = true;
+            playerRenderer.material.SetColor("_Color", installColour);
+        }
+
+    }
+
+    private void IdleInputs()
+    {
+        if (!Input.GetMouseButton(0) && !install)
+        {
+            playerRenderer.material.SetColor("_Color", idleColour);
+        }
+    }
+
+    private void InstallInputs()
+    {
+        if (!Input.GetMouseButton(0) && install)
+        {
+            playerRenderer.material.SetColor("_Color", installColour);
+        }
+    }
+
 
     void IncreaseInstall (float meterChange)
     {
