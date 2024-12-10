@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MovementTutorail.unity
     guid: 135be69f5be3b5c41bd239501705beab
   - enabled: 1
-    path: Assets/Scenes/SettingsMenu.unity
-    guid: 34eac652b3a39dd45bec317931f6002d
+    path: Assets/Scenes/SettingsMenu 1.unity
+    guid: 85ee417a4fad4274cbbf7b97aa6133ad
   m_configObjects: {}

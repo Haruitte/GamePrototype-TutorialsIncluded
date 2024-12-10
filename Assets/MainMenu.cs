@@ -6,6 +6,13 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     // Start is called before the first frame update
+
+
+    public void BackButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadScene("MovementTutorail");
@@ -13,13 +20,10 @@ public class MainMenu : MonoBehaviour
 
     public void SettingsButton()
     {
-        SceneManager.LoadScene("SettingsMenu");
+        SceneManager.LoadScene("SettingsMenu 1");
     }
 
-    public void BackButton()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
+    
 
     public void QuitGame()
     {
