@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class CheckpointSingle : MonoBehaviour
 {
-  
+
+    private TrackCheckpoints trackCheckpoints;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent<PLayer>(out Player player))
+        if (other.TryGetComponent<Player>(out Player player))
         {
-            Debug.Log("Checkpoint!");
+           trackCheckpoints.PlayerThroughCheckpoint(this);
         }
     }
 
+    public void SetTrackCheckpoints(TrackCheckpoints trackCheckpoints)
+    {
+        this.trackCheckpoints = trackCheckpoints;
+    }
 }
