@@ -10,7 +10,7 @@ public class CheckpointSingle : MonoBehaviour
     {
         if (other.TryGetComponent<Player>(out Player player))
         {
-           trackCheckpoints.PlayerThroughCheckpoint(this);
+            trackCheckpoints.PlayerThroughCheckpoint(this);
         }
     }
 
