@@ -89,4 +89,10 @@ Drag the Camera Rotator object into to Rotate Pivot on the right of the screen u
 
 ## Step 6: Finish
 
-Now, after hitting play, this should be the end result.
+Now, after hitting play, this should be the end result:
+
+
+https://github.com/user-attachments/assets/026c7ef5-7b70-4b89-a848-a644f2808370
+
+
+
