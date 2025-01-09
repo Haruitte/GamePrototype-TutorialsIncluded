@@ -124,3 +124,7 @@ For lateral movement, that’s fine, however since jump is affected by the Playe
  
 After going back into Unity, select the Player object, and drag it into the body, then select the Camera Rotator below inside the Player, and drag that into Cam Rotator (as shown below the body insert).
 
+The finished product should look something like this:
+
+https://github.com/user-attachments/assets/c86ffcd6-ca4f-4893-abdb-a08054207ca3
+
