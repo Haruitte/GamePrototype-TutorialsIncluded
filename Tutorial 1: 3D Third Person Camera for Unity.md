@@ -1,11 +1,11 @@
-## 3D Third Person Camera for Unity
-### This tutorial will look at coding and implementing a third person camera into Unity that will be controlled by the players mouse movements.
+# 3D Third Person Camera for Unity
+## This tutorial will look at coding and implementing a third person camera into Unity that will be controlled by the players mouse movements.
 
-### Step 1: Making the scene:
+## Step 1: Making the scene:
 
 The first thing that will be needed to do is to make a new (or open a scene you plan to add this system to) in Unity.
 
-### Step 2: Making the gameObjects:
+## Step 2: Making the gameObjects:
 
 For this tutorial, we will be using the assets that can be made in Unity as placeholders, for this we will be creating by going to GameObject at the top of Unity, then going to the dropdown, 3D Object selecting Cube and renaming this to “Player”. 
 
@@ -33,7 +33,7 @@ When done correctly, it should look something like this. Take note of the settin
 
 The reason we are doing this early is just so that once we add our code, we know the object will actually interact with our Floor and not just fall through it. As for why we chose Capsule over Box, this is only important once you add movement to a Player, but for now is just to help in the future with ramps or sloped ground.
 
-### Step 3: Making the components for the Camera to attach and rotate to:
+## Step 3: Making the components for the Camera to attach and rotate to:
 
 ![image](https://github.com/user-attachments/assets/740095f9-c882-43d7-b04c-18f30e941f5f)
 
@@ -51,7 +51,7 @@ This will just make seeing the camera easier. From here, you can move it around 
 
 The next step is to make a script for the Camera to interact with the Player’s inputs. To make a script, go to assets and right click the blank space.
 
-### Step 4: Making the Camera Script and explaining what the code does:
+## Step 4: Making the Camera Script and explaining what the code does:
 
 Before creating the script, I would make a folder to separate files, so instead of selecting C# Script when right clicking, click folder, and rename that to CameraControls. Opening the folder, right click again and create C# script, naming that RotatorControls.
 
@@ -79,7 +79,7 @@ DetectMouse is, as named, code to detect where your curser is and using the Inpu
 
 Finally for the script, below the private void start, we make a void update and put the previous statements we made under it so they run under update.
 
-### Step 5: Attaching the script:
+## Step 5: Attaching the script:
 
 The next step is to open Unity again, and drag the Rotator controls script onto the camera, this will allow the cameras to follow the code we just made for it. The last step before testing is to drag the Camera Rotator game object, we made earlier from the left column into the script we made from the transform variable at the beginning. 
 
@@ -87,6 +87,6 @@ The next step is to open Unity again, and drag the Rotator controls script onto 
 
 Drag the Camera Rotator object into to Rotate Pivot on the right of the screen under Rotator Controls.
 
-### Step 6: Finish
+## Step 6: Finish
 
 Now, after hitting play, this should be the end result.
