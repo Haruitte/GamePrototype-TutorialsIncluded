@@ -52,14 +52,21 @@ The first step when making the script for the rotator is to make variables. Thes
 The SerializeField item before it is special, as despite these variables being private (meaning they don’t show up in unity), by using SF, we can force these lines to appear within Unity’s UI once we have attached the code to one of the Objects.
 
 The transform is for creating a variable within Unity. This is where we will attach one of those empty gameObjects (Camera Rotator specifically) so it knows where to pivot off.
+
+ ![image](https://github.com/user-attachments/assets/f334b05e-967f-4d7d-81c7-948288b7147e)
+
+This statement is to prevent the cursor from moving when moving the camera. This is similar to how in most modern video games, the cursor won’t be usable when tabbed into the game so you don’t accidentally click on something such as the windows bar.
  
-This statement is to prevent the cursor from moving when moving the camera. This is similar to how in most modern video games, the cursor won’t be usable when tabbed into the game so you don’t accidentally click on think in the background.
- 
+![image](https://github.com/user-attachments/assets/f13638a3-9a97-4dd4-911c-73a90d55b04d)
 
 The code here is another statement, however the “void” is to make it so the code cannot return values. DetectMouse is, as named, code to detect where your curser is and using the Input.GetAxis function before x and y movements of our mouse (these are then multiplied by our sensitivity we have made as variables before this. Mathf.Clamp allows us to limit the rage of the mouse, preventing the camera from entering unintentional areas, i.e. having the camera below the floor or behind a wall. ApplyCameraRotation does as it says, the code changing the angle of from where the rotation pivot is, thus spinning the camera.
- 
-Finally, below the private void start, we make a void update and put the previous statements we made under it so they run under update.
- 
+
+ ![image](https://github.com/user-attachments/assets/976b0594-980a-49a8-ab39-54861c255333)
+
+Finally for the script, below the private void start, we make a void update and put the previous statements we made under it so they run under update.
+
+ ![image](https://github.com/user-attachments/assets/7367fe34-2b98-46de-9f57-03298209d138)
+
 The next step is to open Unity again, and drag the Rotator controls script onto the camera, this will allow the cameras to follow the code we just made for it. The last step before testing is to drag the Camera Rotator game object, we made earlier from the left column into the script we made from the transform variable at the beginning. 
 
 Drag the Camera Rotator object into to Rotate Pivot on the right of the screen under Rotator Controls.
