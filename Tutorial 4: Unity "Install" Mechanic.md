@@ -157,4 +157,5 @@ Now go back to the game object we made in the hierarchy called install and go to
  
 Now, go back to the Install mechanic script and drag the Install object from the canvas in hierarchy to the Install Slider in the Install Mechanic Script and the end result should look like this:
 
+https://github.com/user-attachments/assets/5785e161-e526-467a-be7d-adfeda933c0b
 
