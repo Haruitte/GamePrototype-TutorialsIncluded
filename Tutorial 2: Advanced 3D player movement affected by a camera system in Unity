@@ -26,7 +26,7 @@ Rigidbody will, in short, give our item to act under the controls of physics, gi
 
 Do note the Cube will most likely already have the box collider assigned to it. To get rid of this, look at where it says Box Collider on the right of the screen, then look for the three dots on the right of its name, click that, and hit “remove component”.
 
-![image](https://github.com/user-attachments/assets/beb81dd5-b0e5-4a08-89fc-07616aea2629)
+Image 2
  
 When done correctly, it should look something like this. Take note of the settings as show here and make sure to copy them to the settings you have made on your own Player.
 
