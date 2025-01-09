@@ -161,5 +161,24 @@ Managed to fix the meter by changingthe parameters to be if the meter was above 
 
 ### After Class:
 
-Got help from a friend, found issue: Needed to assign a mesh and material to the Player Cube so that code could refer to that material, and change the colour there. Went back into the code and added the parameters to fix the 
+Got help from a friend, found issue: Needed to assign a mesh and material to the Player Cube so that code could refer to that material, and change the colour there. Went back into the code and added the parameters to account for the material using Serialize field. Fixed.
+
+## Week Ten Goals (10/12/24)
+### Starting Prototype
+
+Because my Tutorials were all made in the same project, I just needed to add a way to make the prototype link to where I thought my final Game project would lead. I know roughly what I want the project to be, but needed to think how I could link what I've made. I decided to make my goal a looping level with check point that would detect if you had "cleared" the previous checkpoint. This is because from what I know about my final game project, it would be required to beat a certain "requirement" in order to get to the next room. I decided that I could have the protoype just check if the Player had passed the previous checkpoint as the condition and started finding a tutorial to follow along.
+
+ - Began following a tutorial.
+
+Issue:
+
+  - Had an issue with install where it stopped working. Went back to fix it.
+  - Couldn't find what the error was, as their seemed to be no issues in Unity or in the code.
+  - Look again: It was a spelling mistake.
+
+Back to tutorial:
+
+Main issues to resolve next:
+
+  - 
 
