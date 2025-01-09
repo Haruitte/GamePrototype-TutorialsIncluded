@@ -169,6 +169,7 @@ Got help from a friend, found issue: Needed to assign a mesh and material to the
 Because my Tutorials were all made in the same project, I just needed to add a way to make the prototype link to where I thought my final Game project would lead. I know roughly what I want the project to be, but needed to think how I could link what I've made. I decided to make my goal a looping level with check point that would detect if you had "cleared" the previous checkpoint. This is because from what I know about my final game project, it would be required to beat a certain "requirement" in order to get to the next room. I decided that I could have the protoype just check if the Player had passed the previous checkpoint as the condition and started finding a tutorial to follow along.
 
  - Began following a tutorial.
+ - Code Used: https://www.youtube.com/watch?v=IOYNg6v9sfc&t=611s
 
 Issue:
 
