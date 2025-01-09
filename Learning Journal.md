@@ -180,5 +180,25 @@ Back to tutorial:
 
 Main issues to resolve next:
 
-  - 
+  - Continue following Tutorial.
+  - Tutorial speeds up, can't identidy what they do inbetween steps.
 
+## Week Eleven Goals (17/12/24)
+### Continue off last week
+
+  - Figured out what the video did but could not find the menu:
+  - Realised the same effect could be made using Mesh Renderer and Materials
+  - Managed to get the transparent effect of the checkpoint.
+  - Made into prefab.
+  - Prefab would stretch weirdly when important.
+  - Went back, Issue found, had assigned the prefab incorrectly in the hierarchy, would copy the scalings of the floor to the prefab.
+  - Rearranged - went to test if the prefab was registered on the debug.log. Didn't retect.
+
+## After Christmas
+## Finish prototype
+
+  - Look for where error could be.
+  - Deleted the Prefab and make a new one, reassign code written to the new prefeb: it works
+  - Go into Unity to make UI if it detectes Player is going wrong way.
+
+Finished Prototype.
