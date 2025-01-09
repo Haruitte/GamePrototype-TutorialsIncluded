@@ -82,3 +82,5 @@ Finally, make another empty game object this time calling it FullHealthBar, then
  
 Then, drag the HealthBar from the hierarchy onto the Healthslider from the script, and drag the Yellow Health from the hierarchy as well onto the EaseHealthBarSlider. It should when finished look like this:
 
+https://github.com/user-attachments/assets/90444fe1-e443-4a8b-8746-6b873e1df410
+
