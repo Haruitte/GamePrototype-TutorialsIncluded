@@ -1,6 +1,8 @@
-Unity “Install” mechanic.
+# Unity “Install” mechanic.
 
-This tutorial will cover something known as an “install mechanic”, and making it for unity in a 3D environment.
+## This tutorial will cover something known as an “install mechanic”, and making it for unity in a 3D environment.
+
+## What is an "Install?"
 
 Before starting the tutorial, the first thing I need to explain is what a “Install” actually is. An install in most games originates from fighting games, when a Player character will build up a resource, normally in the form of a meter, to enter a new “state”.
 
@@ -14,6 +16,8 @@ To illustrate this, in this Tutorial we will need some items to illustrate this 
 
 To do this, I will be taking advantage of Unity’s material system. Our goal for this part of the install is to get the player to change colours to represent different states. This is just to show and test that the “Player” will enter the correct states.
 
+## Step 1: Creating a Scene and the base Assets:
+
 First, create a new scene to begin this project.
 
 We will start by creating our “Player” and a base for them to stand on. This will be done by going into hierarchy and right clicking, then 3D objects. Select cube then repeat the process, selecting plane the second time round.
@@ -22,11 +26,15 @@ We will start by creating our “Player” and a base for them to stand on. This
 
 Rearrange it so it looks something like this, you can scale the floor by pressing “e” and dragging the coloured red line to expand it out. Press “q” to go back to select mode and click on the cube and floor to move them around.
 
-![image](https://github.com/user-attachments/assets/89e0e369-8cb9-42ad-832e-aaa26441d79a)
+## Step 2: Making the Script: Breaking down the Script
 
 The first thing we want to do is to write a script for our install code. My advice is to go into assets and right click, and hit folder. We can call this “InstallSystem”. 
 
 This is where we can keep all the assets for our items involved with managing the install system. Double click this folder to enter it, and right click it again, this time selecting C# Script and naming it “InstallMechanic”.
+
+![image](https://github.com/user-attachments/assets/89e0e369-8cb9-42ad-832e-aaa26441d79a)
+
+## Step 3: Establishing variables:
 
 After Visual Studio has opened, the first thing we should do is start with our variables. These will be values we create and name that will be used later on in the Statements we will be writing.  
 
@@ -51,6 +59,8 @@ The next variable “Header” is just to clarify what the variables below are r
 
 Colour is just so that we can assign a colour to these values when we go back into Unity.
 
+## Step 4: Establishing values at script start:
+
 ![image](https://github.com/user-attachments/assets/1cb2fc33-46b0-4798-9463-7d237aaad9a5)
 
 The final parts are to refer back to Unity, as we will be using assigning a Material to our Player to change their colour, this is just to tell Unity that we using that Material in this script, with the mesh renderer also to do with the Player’s game object.
@@ -58,6 +68,8 @@ The final parts are to refer back to Unity, as we will be using assigning a Mate
 We then need to assign some values at the start of the game, these being what the installValue should start at, and what we will be affecting within Unity.
  
 Since this needs to run as soon as the game would start, we shall put that code under a void Start like so. Here, we establish the installValue, and refer back to our variables, making a new “player material” for our colour changing that will represent the different states.
+
+## Step 5: Making statements for checking the Install, matching it to the meter and chaging its colour:
 
 Below this, we want to write code to check which of the four states the Player is in to switch the colour of our Player when depending on the state they’re in.
 
@@ -71,7 +83,9 @@ Now to show what it would look like to check if the Install was true, we change 
  
 Here, it is similar to the code we wrote before, but this time it checks if the install is false and if and install value are equal to the max install variable we made earlier (which is set to be 100) is true. This will then change the install value to true, then will change its colour in response to this.
 
-The last thing we need to do is repeat this process but if the Player is attacking for both no Install and true Install.
+## Step 6: Changing Install values and grouping Statements:
+
+The next thing we need to do is repeat this process but if the Player is attacking for both no Install and true Install.
 
 ![image](https://github.com/user-attachments/assets/bc4cb477-cb14-48ad-acd2-10feaef3172b)
  
@@ -81,7 +95,7 @@ We then need to write code on how to increase the meter, and how to make it decr
 
 ![image](https://github.com/user-attachments/assets/eb568c23-5059-451d-bffb-ccb0bb5dd23d)
  
-This code focuses on changing the value of instal. The first is a flat increase and the second is a decrease over time. We haven’t assigned these values yet but we will assign a separate a value to them. For now, this code also adds a limit to how much and how little they decrease by, as well as setting the meter to change as well.
+This code focuses on changing the value of install. The first is a flat increase and the second is a decrease over time. We haven’t assigned these values yet but we will assign a separate a value to them. For now, this code also adds a limit to how much and how little they decrease by, as well as setting the meter to change as well.
 
 ![image](https://github.com/user-attachments/assets/0084ca63-0420-4e8e-bb8d-c5345070a1f4)
  
@@ -91,9 +105,13 @@ Here we are just gathering the if statements from before and grouping them toget
  
 Above this we make a new statement, that being an if statement called SliderCheck. This will just mean when we make our Slider for the Install Meter it will correct the value of the slider to our Install value to match. The Mathf.Lerp is to limit how much the meter can adjust at a time; this will make the meter look smoother as it goes up and down with the values changing.
 
+## Step 7: Tying Scripts to update and adding attack functions:
+
 ![image](https://github.com/user-attachments/assets/05751069-1552-40a7-abe8-36c921493d45)
  
 Above this, we focus on connecting all our statements together in update from before, but we also add the value changers here. This is how we control the colour of the Player when they’re attacking and how we change the install value, as shown with decrease install and increase install, with the if statement changing the colour of the Player whilst we attack.
+
+## Step 8: Creating Material and Mesh Renderer in Unity, assigning Colours:
 
 ![image](https://github.com/user-attachments/assets/d0a835e4-4e06-4427-8220-096c5f689a2c)
  
@@ -112,6 +130,8 @@ From there, go back to add component and select “Mesh Renderer” and add it.
 We can then drag PlayerIdle Our material) and Mesh Renderer to the spots you see here, as well as assigning colours to our State Colours we named before (They can be whatever colour you would like, but I have assigned them as such here).
 
 ![image](https://github.com/user-attachments/assets/c4ac95d6-864b-4977-8ac6-6148d79f6a4c)
+
+## Step 9: Creating the Meter to represent our Install Value:
  
 Your Install Script should look something like this (which is different from the image earlier where there were items already attached to the Install Slider and Ease Install Slider.), however we have to add one last thing before we can make sure it works, that being a meter to see our values.
 
@@ -135,6 +155,6 @@ Now go back to the game object we made in the hierarchy called install and go to
 
 ![image](https://github.com/user-attachments/assets/4f5db962-3e88-4791-801c-5b79269099e8)
  
-Now, go back to the Install mechanic script and drag the Install object from the canvas in hierarchy to the Install Slider in the Install Mechanic Script and it should look like this.
+Now, go back to the Install mechanic script and drag the Install object from the canvas in hierarchy to the Install Slider in the Install Mechanic Script and the end result should look like this:
 
 
