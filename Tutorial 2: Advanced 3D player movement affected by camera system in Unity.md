@@ -1,14 +1,14 @@
-## Advanced 3D player movement affected by a camera system in Unity
+# Advanced 3D player movement affected by a camera system in Unity
 
-This Tutorial will focus on making a controllable character in a 3D environment for Unity.
+## This Tutorial will focus on making a controllable character in a 3D environment for Unity.
 
-### Prerequisites:
+## Prerequisites:
 
 This tutorial needs a camera system for the controls to work, as it needs to identify where the camera is facing to establish where the cube should face. 
 
 It is advised you have a Camera system already made and established, or you know how to make one before continuing. (You can also follow along on my previous tutorial which does cover how to make a camera system).
 
-### Step 1: Making the base parts of the System:
+## Step 1: Making the base parts of the System:
 
 To start open a new scene in Unity, or an existing one if youplan on implementng this movement to an pre-existing scene with a gameObject you plan on making the "Player"
 
@@ -26,7 +26,7 @@ This will be important so the Cube will know what its touching so it knows when 
 
 Going back to the cube, we need to give it a way to interact with the other items in the scene, and we can do this by adding components to the Player.
 
-### Step 2: Adding components to our game objects:
+## Step 2: Adding components to our game objects:
 
 Selecting the Player, if you go to the right, you will see a spot to “Add Component”. Here we will click that and add two things. Rigidbody and Capsule Collider.
 
@@ -56,9 +56,9 @@ To do this, just right click on the assets box, look for “new”, and select F
 
 In your respective folder for “Player” assets, right click and create, but this time, we will be making a C# script. Name “Player”, and drag that script to “add component” for the cube (Player). Then, double click to open it.
 
-### Step 3: Making the script/code for the movement:
+## Step 3: Making the script/code for the movement:
 
-#### Making the variables:
+### Making the variables:
 
 ![image](https://github.com/user-attachments/assets/b94e9c90-73f5-4931-9559-cb0c09c7f3a0)
  
@@ -70,7 +70,7 @@ The code referring to direction, cam rotator and camera forward will work in con
 
 The other values also use int and floats, but their purposes are to be used as checks; to see if the Player is at a certain value which will then be influenced by later code. And important note is that these variables should be before any of the code that we will be writing, as they will need to be the first thing the computer reads in the lines.
 
-### Step 4: Seprating our code into core aspects, lateral movement:
+## Step 4: Seprating our code into core aspects, lateral movement:
 
 The next thing to do is to make the code for the actual aspects we plan on influencing on our character. The main things we want to do with our character are “detecting” inputs and “applying” forces onto our characters. To do this, we need to make multiple lines of code for specific actions. A good place to start is detecting movement.
 
@@ -96,7 +96,7 @@ This will trigger the if statement, change the velocity of our "Player" to by th
 
 The code referring to quaternion’s is just to dictate what we define as the “front” of our player and being used to smooth the turning of our object as it faces different directions.
 
-### Step 5: Creating our Jump and checking if we are grounded:
+## Step 5: Creating our Jump and checking if we are grounded:
 
 Below that is code to apply jump, grabbing the space input and when pressed, applying force horizontally multiplied by jump force we set earlier as a variable. 
 
@@ -120,7 +120,7 @@ For lateral movement, that’s fine, however since jump is affected by the Playe
 
 ![image](https://github.com/user-attachments/assets/b595bbd7-30dc-47cc-8dfb-2f3d85b74f7b)
 
-### Step "6": Re-entering Unity:
+## Step "6": Re-entering Unity and finalising:
  
 After going back into Unity, select the Player object, and drag it into the body, then select the Camera Rotator below inside the Player, and drag that into Cam Rotator (as shown below the body insert).
 
