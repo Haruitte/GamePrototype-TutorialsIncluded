@@ -200,6 +200,10 @@ Main issues to resolve next:
 
   - Look for where error could be.
   - Deleted the Prefab and make a new one, reassign code written to the new prefeb: it works
-  - Go into Unity to make UI if it detectes Player is going wrong way.
+  - Go into Unity to check UI if it detectes Player is going wrong way.
+  - It does, begin to write code to affect the Player if ther are not in install state and try to pass a checkpoint.
+  - Issue: Struggling to get code to work: I understand what needs to be done, but unsure how to write the code.
+  - Change area of coding, swapped from trying to code the feature in Checkpoints and tried it in different scripts.
+  - Got it right eventually, the code was correct but should have been written within Install mechanics.
 
 Finished Prototype.
