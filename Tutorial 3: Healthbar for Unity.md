@@ -2,7 +2,11 @@
 
 ## This Tutorial will be focused on making a health bar with deteriorating after effects when the user takes/ receives damage.
 
+## Step 1: Making/ Opening the Scene:
+
 The first thing to do is to make a new in Unity scene or opening one in which you plan to implement this system into.
+
+## Step 2: Creating the UI for the Health Bar:
 
 To get started go to the hierarchy and right click in it, going down to UI and canvas, and click it. Once that is done you should see two things pop up, a Canvas and an Event system. To make this easier to see, click 2D with canvas selected (as shown in the top right).
 
@@ -26,11 +30,15 @@ Now, we repeat this process, but instead of calling it background, it will be ca
 
 ![image](https://github.com/user-attachments/assets/304e4ffb-c167-4238-bdfa-1e3fe91e7c41)
 
+## Step 3: Adding the Slider Mechanic to the Health Bar and test it:
+
 Next, go to add components and a Slider to the health bar.
 
 ![image](https://github.com/user-attachments/assets/6070ca5d-abee-41e2-b31b-1dc8e9483e1b)
  
 On the Value you can slide that bar up and down to test the colour changes nut make sure to drag Fill from hierarchy into Fill rect first. 
+
+## Step 4: Making the script for the Health Bar, setting the system up and Variables:
 
 The next thing we are going to do is write code so that we can test taking damage and that it shows up on our health bar as feedback. To create a script, go to hierarchy, right click an empty space and click on C# Script and name this HealthBar
 
@@ -44,6 +52,8 @@ Then below that within the start of the script, we are going to set a list of va
  
 The variables using Slider are to tell Unity to affect the slider we added to the health bar earlier, with the maxHealth assigning what value our health bar can cap at, whilst the variable known as health will be used later. lerpSpeed is a what will allow for a deteriorating effect on the health bar when it fades (this will be more prominent once I show you how it looks at the end).
 
+## Step 4: Detecting health values and adjusting the sliders value:
+
 ![image](https://github.com/user-attachments/assets/35c342f8-fb09-4e1f-b018-6afab6ac2dd1)
  
 The code above is assigned its name as per what the statements actually do. The first checks whether the health sliders value is equal to the health of the player. If it is not, it will change the slider to whatever the health value is when it changes, making sure it doesn’t display the wrong value on the slider.
@@ -52,15 +62,23 @@ The second (ChangingHealthValue) is to simulate taking damage. For this tutorial
 
 ChangingInGameHealth is similar to CheckingHealthValue, but it checks if the healthSlider is not equal to the easeHealthSlider value, and if not, changes the value of the easeHealthSlider (I will call this yellow health as that is what I have named it in my scene.) and match it to the yellow health slider. The lerp function will limit how much of the value can match causing a deteriorating health bar affect to make the animation smoother.
 
-Finally, the take damage at the end is linked to the ChangingHealthValue, where it takes the value (in this case ten) and minuses from the health.
+## Step 5: Linking all the statements together:
+
+Then for our code we take the damage at the end is linked to the ChangingHealthValue, where it takes the value (in this case ten) and minuses from the health.
 
 ![image](https://github.com/user-attachments/assets/6814fb64-0d3d-409d-a65f-b1ca3e878036)
 
 Then the last thing for the code is plugging them back into the game. This is done by taking the names of the statements and grouping them into another statement which I have called HealthValue. This is plugged into a void update so that it is always checking the statements conditions, and changing them using the code we have written. Then, in void Start, we set health to equal maxHealth at the start of the program running.
 
+## Step 6: Reassigning the assets and linking gameObjects into our code:
+
 Back into Unity, you will notice we do not have a value known as Yellow Health or easeHealthSlider. Duplicate the health bar you have made and then delete the background of the original Health bar, making sure the new Yellow Health is above the hold one (and make sure to change the colour as well to, in this case, yellow).
- 
+
+![image](https://github.com/user-attachments/assets/a2326360-582c-4d68-84e6-bf358c22fcf7)
+
 Finally, make another empty game object this time calling it FullHealthBar, then drag the script we made earlier onto it, attaching the other items so it looks like this:
+
+![image](https://github.com/user-attachments/assets/24d59add-e8b7-4e55-b5ec-84775d0db07c)
  
 Then, drag the HealthBar from the hierarchy onto the Healthslider from the script, and drag the Yellow Health from the hierarchy as well onto the EaseHealthBarSlider. It should when finished look like this:
 
